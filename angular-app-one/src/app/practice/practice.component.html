@@ -1,11 +1,15 @@
-<p>practice works!</p>
+<div class="container-fluid">
 
-<div>
-    <input type="text" [(ngModel)]="name">
-    <div>
-        <label>Your name is {{ name }}</label>
-    </div>
-    <div>
-        <button class="btn btn-primary" (click)="printName()"> Print name</button>
+    <p>practice works!</p>
+
+
+    <div class="col-xs-12">
+        <input type="text" [(ngModel)]="name">
+        <div>
+            <label>Your name is {{ name }}</label>
+        </div>
+        <div>
+            <button class="btn btn-primary" (click)="printName()"> Show name</button>
+        </div>
     </div>
 </div>
