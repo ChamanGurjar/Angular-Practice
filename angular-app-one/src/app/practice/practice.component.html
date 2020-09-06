@@ -5,12 +5,12 @@
 
     <div class="col-xs-12">
         <!-- <input type="text" [(ngModel)]="name"> -->
-        <input type="text" class="form-control" #nameEnteredByUser>
+        <input type="text" class="form-control" #enteredName>
         <!-- <div>
             <label>Your name is {{ name }}</label>
         </div> -->
         <div class="col-xs-12 mt-2">
-            <button class="btn btn-primary" (click)="printName(nameEnteredByUser)"> Show name</button>
+            <button class="btn btn-primary" (click)="printName()"> Show name</button>
         </div>
     </div>
 </div>

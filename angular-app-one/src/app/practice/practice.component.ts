@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-practice',
@@ -7,15 +7,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PracticeComponent implements OnInit {
 
-  //  name: String
+  @ViewChild('enteredName', { static: true }) name: ElementRef;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  printName(input) {
-    const name = input.value
+  printName() {
+    const name = this.name.nativeElement.value
     if (name) {
       alert("Your name is => " + name)
     } else {
