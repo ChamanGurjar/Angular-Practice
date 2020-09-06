@@ -7,16 +7,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PracticeComponent implements OnInit {
 
-  @Input() name: String
+  //  name: String
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  printName() {
-    if (this.name) {
-      alert("Your name is => " + this.name)
+  printName(input) {
+    const name = input.value
+    if (name) {
+      alert("Your name is => " + name)
     } else {
       alert("Please enter name first")
     }
