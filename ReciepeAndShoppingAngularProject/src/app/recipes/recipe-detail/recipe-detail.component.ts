@@ -22,8 +22,8 @@ export class RecipeDetailComponent implements OnInit {
     this.activatedRoute.params.
       subscribe((params: Params) => {
         this.recipeId = +params["id"];
+        this.recipe = this.recipeService.getRecipeByIndex(this.recipeId);
       })
-    this.recipe = this.recipeService.getRecipeByIndex(this.recipeId - 1);
   }
 
 
