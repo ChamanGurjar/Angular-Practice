@@ -9,5 +9,17 @@ export class CustomValidators {
         return null;
     }
 
+    static asyncinvalidProjectName(control: FormControl): Promise<any> | Observable<any> {
+        const promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (control.value === 'TestProject') {
+                    resolve('invalidProjectName');
+                } else {
+                    resolve(null);
+                }
+            }, 2000);
+        });
+        return promise;
+    }
 
 }
