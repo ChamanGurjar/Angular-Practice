@@ -13,7 +13,8 @@ export class RecipeDetailComponent implements OnInit {
   recipe: Recipe;
   private recipeId: number;
 
-  constructor(private route: ActivatedRoute, private router: Router, private recipeService: RecipeService) {
+  constructor(private route: ActivatedRoute, private router: Router,
+    private recipeService: RecipeService) {
 
   }
 
@@ -33,5 +34,10 @@ export class RecipeDetailComponent implements OnInit {
 
   editRecipe() {
     this.router.navigate(['edit'], { relativeTo: this.route })
+  }
+
+  deleteRecipe() {
+    this.recipeService.deleteRecipe(this.recipeId)
+    this.router.navigate(['/recipes'])
   }
 }
