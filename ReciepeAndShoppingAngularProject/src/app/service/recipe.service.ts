@@ -21,6 +21,8 @@ export class RecipeService {
             [new Ingredient("Paneer", 1.5), new Ingredient("Chilli", 2)])
     ]
 
+    recipeChanged = new Subject<Recipe[]>()
+
     constructor(private shoppingListService: ShoppingListService) { }
 
     getRecipes() {
@@ -33,6 +35,18 @@ export class RecipeService {
 
     getRecipeByIndex(index: number): Recipe {
         return this.recipes[index];
+    }
+
+    addRecipe(recipe: Recipe) {
+        console.log("Recipe to add => ", recipe)
+        this.recipes.push(recipe);
+        this.recipeChanged.next(this.recipes.slice());
+    }
+
+    updateRecipe(index: number, recipe: Recipe) {
+        console.log("Recipe to update => ", recipe)
+        this.recipes[index] = recipe;
+        this.recipeChanged.next(this.recipes.slice());
     }
 
 }
